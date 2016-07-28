@@ -1,9 +1,10 @@
-var connection = require('../config/connection.js');
-var tableName = burgers;
+var connection 			= require('../config/connection.js');
 
+// This object is a template for the model
 var orm = {
-	selectAll: function(callback){
-		var select = 'SELECT * FROM ' + tableName;
+
+	selectAll: function(table, callback){
+		var select = 'SELECT * FROM ' + table;
 
 		connection.query(select, function(err, result) {
 
@@ -11,12 +12,14 @@ var orm = {
 
         });
 	},
-	insertOne: function(name, callback){
-		var insert = 'INSERT INTO ' + tableName + ' (burger_name) VALUES ?;'
-		connection.query(insert, [name]function(err, res){
+	insertOne: function(table, name, callback){
+		var insert = 'INSERT INTO ' + table + ' (burger_name) VALUES ?;'
+		connection.query(insert, [name] function(err, res){
 			console.log(result);
 		})
 	},
+
+	// This method updates the devoured value from false to true, and sets the timestamp
 	updateOne: function(){}
 
 };
