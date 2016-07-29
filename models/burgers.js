@@ -7,13 +7,17 @@ var burger = {
 		});
 	},
 
-	insertOne: function(name, callback){
-		orm.insertOne('burgers', name, function(res){
+	insertOne: function(col, val, callback){
+		orm.insertOne('burgers', col, val, function(res){
 			callback(res);
 		});
 	},
 
-	updateOne: function(){}
-}
+	updateOne: function(colValObj, condition, cb) {
+		orm.update('burgers', colValObj, condition, function(res){
+			cb(res);
+		});
+	}
+};
 
 module.exports = burger;
