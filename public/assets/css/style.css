@@ -22,23 +22,34 @@ body {
 
 }
 
+#burger-panel {
+	border-color: #000;
+    width: 500px;
+}
+
+#burger-heading {
+	background-color: #EFECCA;
+}
+
 h2, li {
 	color: #5E565A;
 }
 
 #devour-btn {
-	background-color: #F7FF58;
-	color: #5E565A;
+	background-color: #A7E2E3;
+    color: #5E565A;
 }
 
 #full {
 	float:right;
 	padding-right: 80px;
+	padding-top: 30px;
 }
 
 #hungry {
 	float: left;
 	padding-left: 80px;
+	padding-top: 30px;
 }
 
 #add {
