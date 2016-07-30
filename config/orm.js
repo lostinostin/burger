@@ -33,9 +33,9 @@ var orm = {
 	},
 
 	insertOne: function(table, col, val, callback){
-		var insert = 'INSERT INTO ' + table + ' (' + col.toString() + ') VALUES' + printQuestionMarks(val.length) + ';'
+		// var insert = 'INSERT INTO ' + table + ' (' + col.toString() + ') VALUES (?)';
 
-		connection.query(insert, val, function(err, res){
+		connection.query('INSERT INTO ' + table + ' (' + col.toString() + ') VALUES (?)', [val], function(err, res){
 			if (err) throw err;
 			callback(res);
 		});
@@ -43,7 +43,7 @@ var orm = {
 
 	// This method updates the devoured value from false to true, and sets the timestamp
 	updateOne: function(table, colValObj, condition, callback){
-		var update = 'UPDATE ' + table + ' SET ' + objToSql(colValObj) +  ' WHERE ' + condition + ';'
+		var update = 'UPDATE ' + table + ' SET ' + objToSql(colValObj) +  ' WHERE ' + condition;
 		connection.query(update, function(err, res){
 			if (err) throw err;
 			callback(res);

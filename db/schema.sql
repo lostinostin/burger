@@ -1,8 +1,8 @@
-/* Create and use the starwars db */
+/* Create and use the burgers db */
 CREATE DATABASE  `burgers_db`;
 USE `burgers_db`;
 
-/* Create a table for all your star wars characters */
+/* Create a table for all your burgers */
 CREATE TABLE `burgers` (
 	`id` Int( 11 ) AUTO_INCREMENT NOT NULL,
 	`burger_name` VARCHAR(255) NOT NULL,

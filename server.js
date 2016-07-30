@@ -4,7 +4,7 @@ var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 
 // This line is responsible for serving up static content.
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + '/public')); //may be a problem***
 
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -21,5 +21,5 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
-var port = 3333;
+var port = process.env.PORT || 3333;
 app.listen(port);
